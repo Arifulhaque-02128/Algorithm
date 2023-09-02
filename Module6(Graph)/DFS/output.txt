@@ -1,0 +1,14 @@
+Height of the Tree : 4
+Depth of 1 : 0
+Depth of 2 : 1
+Depth of 3 : 1
+Depth of 4 : 2
+Depth of 5 : 2
+Depth of 6 : 3
+Depth of 7 : 3
+Depth of 8 : 4
+Depth of 9 : 2
+Depth of 10 : 1
+Depth of 11 : 2
+Depth of 12 : 2
+Depth of the Tree : 4
