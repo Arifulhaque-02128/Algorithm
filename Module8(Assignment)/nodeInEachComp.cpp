@@ -1,12 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-const int N = 100005;
+const int N = 1e5+5;
 vector<int> adjList[N];
 bool visited[N];
-int comp[N];
+int cnt = 0;
 
-void bfs(int r, int cc){
+int bfs(int r){
     queue<int> q;
     q.push(r);
     visited[r] = true;
@@ -15,7 +15,7 @@ void bfs(int r, int cc){
     {
         int u = q.front();
         q.pop();
-        comp[cc]++;
+        cnt++;
 
         for(int v: adjList[u]){
             if(visited[v] == true) continue;
@@ -25,6 +25,8 @@ void bfs(int r, int cc){
             }
         }
     }
+
+    return cnt;
 }
 
 int main()
@@ -38,23 +40,15 @@ int main()
     }
     
 
-    int cc = 0;
-
-    for (int i = 0; i < n; i++)
-    {
-        if(adjList[i].size() <= 0) continue;
-        else if(visited[i]) continue;
-        else {
-            cc++;
-            bfs(i, cc);
-        }
-    }
-
     vector<int> components;
 
-    for (int i = 1; i <= cc; i++)
+    for (int i = 0; i < N; i++)
     {
-        components.push_back(comp[i]);
+        cnt = 0;
+        // if(adjList[i].empty()) continue;
+        if(visited[i]) continue;
+        int result = bfs(i);
+        if(result > 1) components.push_back(result);
     }
 
     sort(components.begin(), components.end());

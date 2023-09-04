@@ -1,25 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-const long long N = 100005;
-vector<long long> adjList[N];
-vector<long long> dist;
+const int N = 1e5+5;
+vector<int> adjList[N];
 bool visited[N];
-long long level[N];
+int level[N];
 
-void bfs(long long r){
+void bfs(int r){
 
-    queue<long long> q;
+    queue<int> q;
     q.push(r);
     visited[r] = true;
     level[r] = 0;
 
     while (!q.empty())
     {
-        long long u = q.front();
+        int u = q.front();
         q.pop();
 
-        for(long long v: adjList[u]){
+        for(int v: adjList[u]){
             if(visited[v] == true) continue;
             else {
                 q.push(v);
@@ -33,20 +32,25 @@ void bfs(long long r){
 int main()
 {
 
-    long long n,m; cin>>n>>m;
-    for (long long i = 0; i < m; i++)
+    int n, m; cin>>n>>m;
+    for (int i = 0; i < m; i++)
     {
-        long long u, v; cin>>u>>v;
+        int u, v; cin>>u>>v;
         adjList[u].push_back(v);
         adjList[v].push_back(u);
     }
 
+    for (int i = 0; i < N; i++)
+    {
+        level[i] = -1;
+    }
+    
     bfs(0);
 
-    long long k; cin>>k;
-    vector<long long> shops;
+    int k; cin>>k;
+    vector<int> shops;
 
-    for(long long i=0; i<n; i++){
+    for(int i = 0; i < N; i++){
         if(level[i] == k){
             shops.push_back(i);
         }
@@ -55,7 +59,7 @@ int main()
     sort(shops.begin(), shops.end());
 
     if(shops.size() > 0){
-        for(long long val: shops){
+        for(int val: shops){
             cout<<val<<" ";
         }
     } else {
@@ -64,3 +68,9 @@ int main()
     
     return 0;
 }
+
+
+// input ----> 3 2
+// 0 1
+// 0 2
+// 1

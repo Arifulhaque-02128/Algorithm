@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-const int N = 1004;
+const int N = 1e5+5;
 vector<int> adjList[N];
 bool visited[N];
 int level[N];
@@ -44,7 +44,7 @@ int main()
     long long k; cin>>k;
     for (int i = 0; i < k; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j <= N; j++)
         {
             visited[j] = false;
             level[j] = -1;
