@@ -1,0 +1,2 @@
+Shortest Path from 1 to 7 : 1 2 3 4 6 5 7 
+Minimum Cost 9

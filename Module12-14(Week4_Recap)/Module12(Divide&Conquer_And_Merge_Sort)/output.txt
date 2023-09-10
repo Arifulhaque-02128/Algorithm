@@ -1,0 +1,34 @@
+Part : 0 0 1
+Left : 5 
+Right : 3 
+Part : 0 1 2
+Left : 3 5 
+Right : 20 
+Part : 3 3 4
+Left : 30 
+Right : 40 
+Part : 3 4 5
+Left : 30 40 
+Right : 15 
+Part : 0 2 5
+Left : 3 5 20 
+Right : 15 30 40 
+Part : 6 6 7
+Left : 25 
+Right : 17 
+Part : 6 7 8
+Left : 17 25 
+Right : 50 
+Part : 9 9 10
+Left : 66 
+Right : 70 
+Part : 9 10 11
+Left : 66 70 
+Right : 57 
+Part : 6 8 11
+Left : 17 25 50 
+Right : 57 66 70 
+Part : 0 5 11
+Left : 3 5 15 20 30 40 
+Right : 17 25 50 57 66 70 
+3 5 15 17 20 25 30 40 50 57 66 70 
